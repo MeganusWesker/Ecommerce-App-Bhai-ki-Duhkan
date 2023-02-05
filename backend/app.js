@@ -28,6 +28,11 @@ app.use(
 );
 
 
+app.get("/", (req, res, next) => {
+  res.send("Working");
+});
+
+
 
 // importing routes from routes Folder
 import userRoutes from './routes/userRoutes.js';
