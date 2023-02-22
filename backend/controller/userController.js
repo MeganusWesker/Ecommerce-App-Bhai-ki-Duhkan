@@ -71,7 +71,7 @@ export const verify =catchAsyncErrors(async (req,res,next)=>{
     const email =req.body.email;
     const user =await User.findOne({email});
 
-    console.log(user);
+    
 
     if(otp!==user.otp || user.otp_expiry<Date.now()){
         return next(new ErrorHandler("invalid otp or expired otp",400));
