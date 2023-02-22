@@ -68,7 +68,8 @@ export const register =catchAsyncErrors(async (req,res,next)=>{
 export const verify =catchAsyncErrors(async (req,res,next)=>{
 
     const otp =Number(req.body.otp);
-    const user=await User.findById(req.user._id);
+    const email =req.body.email;
+    const user=await User.findById({email});
     
     if(otp!==user.otp || user.otp_expiry<Date.now()){
         return next(new ErrorHandler("invalid otp or expired otp",400));
