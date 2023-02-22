@@ -13,7 +13,9 @@ import {
         changePassword,
         getMyProfile,
         forgotPassword,
-        resetPassword
+        resetPassword,
+        updateProfile,
+        updateProfilePicture
        } from "../controller/userController.js";
 
 
@@ -24,6 +26,10 @@ router.route('/verify').post(isAuthenticated,verify);
 router.route('/login').post(login);
 
 router.route('/logout').get(isAuthenticated,logout);
+
+router.route('/update/profile').put(isAuthenticated,updateProfile);
+
+router.route('/update/profile/picture').put(singleUpload,isAuthenticated,updateProfilePicture);
 
 router.route('/updatepassword').put(isAuthenticated,changePassword);
 

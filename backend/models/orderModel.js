@@ -87,7 +87,9 @@ const orderSchema =mongoose.Schema({
     enum: ["Preparing", "Shipped", "Delivered"],
     default: "Preparing",
   },
+  
   deliveredAt: Date,
+
   createdAt: {
     type: Date,
     default: Date.now,

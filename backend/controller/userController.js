@@ -58,8 +58,11 @@ export const register =catchAsyncErrors(async (req,res,next)=>{
         });
     }
 
-    
-   sendToken(res,user,201,"otp sent");
+    res.status(200).json({
+        success:true,
+        message:"otp sent please verify you're email"
+    });
+
 });
 
 export const verify =catchAsyncErrors(async (req,res,next)=>{
@@ -246,6 +249,57 @@ export const forgotPassword =catchAsyncErrors(async (req,res,next)=>{
        message:"password rested successfully"
    });
 
+});
+
+
+export const updateProfile= catchAsyncErrors(async (req, res, next) => {
+    const { name, address, pinCode, country, city } = req.body;
+  
+   const user= await User.findById(req.user._id);
+
+  
+    if (name) user.name = name;
+    if (address) user.address = address;
+    if (pinCode) user.pinCode = pinCode;
+    if (country) user.country = country;
+    if (city) user.city = city;
+  
+    await user.save();
+  
+    res.status(200).json({
+      success: true,
+      message: "Profile Updated Successfully",
+    });
+});
+
+export const updateProfilePicture = catchAsyncErrors(async (req, res, next) => {
+   
+    const user= await User.findById(req.user._id);
+
+   const file =req.file;
+
+   if(!file){
+       return next(new ErrorHandler("please enter profile picture to update ",400));
+    }
+
+   const fileUrl =getDataUri(file);
+
+   const myCloud =await cloudinary.v2.uploader.upload(fileUrl.content,{
+       folder:"avatars",
+   });
+
+   await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+
+
+   user.avatar.public_id=myCloud.public_id;
+   user.avatar.url=myCloud.secure_url;
+
+    await user.save();
+  
+    res.status(200).json({
+      success: true,
+      message: "Profile Picture Updated Successfully",
+    });
 });
 
 
