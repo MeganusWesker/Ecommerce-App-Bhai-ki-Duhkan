@@ -1,0 +1,15 @@
+frontend/node_modules/
+frontend/.expo/
+frontend/dist/
+frontend/npm-debug.*
+frontend/*.jks
+frontend/*.p8
+frontend/*.p12
+frontend/*.key
+frontend/*.mobileprovision
+frontend/*.orig.*
+frontend/web-build/
+backend/node_modules
+backend/config/config.env
+# macOS
+frontend/.DS_Store
