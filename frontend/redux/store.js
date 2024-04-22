@@ -18,4 +18,4 @@ export const store = configureStore({
 //https://ecommerce-backend-pkyk.onrender.com/api/v1
 // https://bhai-ki-dukan-backned.vercel.app/api/v1
 
-export const server = "http://192.168.1.5:4000/api/v1";
+export const server = "https://bhai-ki-dukan-backned.vercel.app/api/v1";
