@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 import { configureStore } from "@reduxjs/toolkit";
-=======
-import {configureStore} from "@reduxjs/toolkit";
->>>>>>> 7280f28c25c555d4d031e270792ea01402585209
 import { otherReducer } from "./reducers/otherReducer";
 import { productReducer } from "./reducers/productReducer";
 import { userReducer } from "./reducers/userReducers";
 import { cartReducer } from "./reducers/cartReducer";
 import { orderReducer } from "./reducers/orderReducer";
 
-<<<<<<< HEAD
 export const store = configureStore({
   reducer: {
     user: userReducer,
@@ -23,22 +18,4 @@ export const store = configureStore({
 //https://ecommerce-backend-pkyk.onrender.com/api/v1
 // https://bhai-ki-dukan-backned.vercel.app/api/v1
 
-export const server = "https://bhai-ki-dukan-backned.vercel.app/api/v1";
-=======
-
-export const store =configureStore({
-    reducer:{
-        user:userReducer,
-        other:otherReducer,
-        product:productReducer,
-        cart:cartReducer,
-        order:orderReducer,
-    }
-});
-
-//https://ecommerce-backend-pkyk.onrender.com/api/v1
-
-
-export const server="https://bhai-ki-dukan-backned.vercel.app/api/v1"
-
->>>>>>> 7280f28c25c555d4d031e270792ea01402585209
+export const server = "http://192.168.1.5:4000/api/v1";
