@@ -49,9 +49,8 @@ Setting Bhai ki Duhkan locally is easy follow the below steps:
     Create a config.env file in the backend/config location. writing you're on env variables just to run this project is,feels Boring for you!. I got you just paste the following variables of mine in the config.env you just have created,
     <br>
 
-        ```
-
-    PORT=4000
+    ```
+        PORT=4000
     MONGO_URI=mongodb+srv://ecommerce:ORhCIIqXTdpHUL3g@ecommerce.g86ki.mongodb.net/?retryWrites=true&w=majority
     NODE_ENV=Development
     JWT_SECRET=thisleonrequestingbackup
@@ -70,9 +69,6 @@ Setting Bhai ki Duhkan locally is easy follow the below steps:
     STRIPE_SECRET_KEY=sk_test_51KAByRSDov8uqpNWE4GKUwr7bcQkYLwnMX2knwGRY29lofktwPilJT4f2hM0AbFMjNXYkaV98SS9SlKbOF77Svqj002FgrHvJH
     ISDOCKER=true
     OTP_EXPIRE=5
-
-    ```
-
     ```
 
 4.  **Run the Project** <br>
